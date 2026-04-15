@@ -1,0 +1,2 @@
+Log level set to: INFO
+save_path: ./checkpoint/mini_imagenet/teen/ft_cos-avg_cos-data_init-start_0/0415-13-28-13-421-Epo_1000-Bs_128-sgd-Lr_0.1-decay0.0005-Mom_0.9-Max_1000-NormF-T_32.00-tw_16-0.5-soft_proto
