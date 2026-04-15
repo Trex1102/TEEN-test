@@ -1,7 +1,7 @@
 python train.py teen \
     -project teen \
     -dataset cifar100 \
-    -dataroot CIFAR_DATA_DIR \
+    -dataroot data \
     -base_mode 'ft_cos' \
     -new_mode 'avg_cos' \
     -lr_base 0.1 \
@@ -10,7 +10,7 @@ python train.py teen \
     -batch_size_base 256 \
     -schedule Cosine \
     -tmax 600 \
-    -gpu '1' \
+    -gpu '0' \
     -temperature 16 \
     -softmax_t 16 \
     -shift_weight 0.1
