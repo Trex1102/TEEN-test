@@ -183,18 +183,19 @@ def count_acc_taskIL(logits, label,args):
     else:
         return (pred == label).type(torch.FloatTensor).mean().item()
 
-def confmatrix(logits,label):
-    
+def confmatrix(logits, label, save_path=None):
     font={'family':'FreeSerif','size':18}
-    matplotlib.rc('font',**font)
+    matplotlib.rc('font', **font)
     matplotlib.rcParams.update({'font.family':'FreeSerif','font.size':18})
-    plt.rcParams["font.family"]="FreeSerif"
+    plt.rcParams["font.family"] = "FreeSerif"
 
     pred = torch.argmax(logits, dim=1)
-    cm=confusion_matrix(label, pred, normalize='true')
+    cm = confusion_matrix(label, pred, normalize='true')
+
+    if save_path is not None:
+        np.save(f"{save_path}.npy", cm)
 
     return cm
-
 def save_list_to_txt(name, input_list):
     f = open(name, mode='a+')
     for item in input_list:
